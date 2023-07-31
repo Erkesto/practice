@@ -1,3 +1,5 @@
+follow link to read the original document -> https://github.com/ryanmcdermott/code-review-tips/blob/master/README.md
+
 # code-review-tips
 
 ## Table of Contents
