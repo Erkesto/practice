@@ -1,0 +1,36 @@
+Naming Things in code:
+  1) avoid using variables with single letters unless for mathematical use...
+  2) NEVER ABBREVIATE your variable names...
+  3) put units in your variable names... eg: delayseconds
+  4) no need to add a type to your type... eg: starting interfaces with an I
+  5) dont name a class "Base" or "Abstract"... if you feel the need to use this change the name of base class
+  6) dont name code "Utils" give them there own classes...
+
+Comments:
+  they tell you about the internal workings of the code... 
+  If your code si complex enough that it needs a comment, you should instead try and simplify or refactor the code...
+  comments can be outdates if the code is being updated regularly...
+  Instead try to mkae a high quality Documentation... it describes the high level architecture and public APIs of a system
+  it describes how to use the code...
+
+Abstraction making codes worse:
+  it is true that code repetition is bad and abstraction is good but there is a hidden tradeoff namely "COUPLING"...
+  Not Worth->
+    - Sharing memeber variables accross two classes
+    - Not valuable for abstraction user
+  Worth->
+    - Many implementations with complex construction
+    - Deferred execution from creation
+
+Road to never nesting:
+  Never add more than 3 inner block to a piece of code...
+  steps to reduce inner nesting:
+    *always make a function do only one thing
+    Extraction-> pulling out part of function into its own function...
+    Inversion-> flipping conditions and switing to an early condition... write the wrong condition first
+
+
+
+
+
+
