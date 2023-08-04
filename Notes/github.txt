@@ -1,0 +1,10 @@
+use Wiki tab to document your project on github...
+sample documentation:
+  title
+  goal
+  problem statement
+  final approach
+  pseudo code
+  code reference (explains all the functions' working)
+  example results
+  *************************
