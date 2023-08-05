@@ -1,0 +1,74 @@
+/commands for terminal
+
+cd -> to change directory
+ls -> to list all the files in the directory 
+make -> to build a project 
+./main -> to run a program
+make clean -> to clear out all the complied  objects and executible files (to make sure the code is recompiled before rerun)
+cd .. -> to go one up the directory from the current location 
+cd 'directory name' -> to go down/inside a directory 
+admin//sudo -> can potentially take control of your system *CAREFUL*
+man -> means manual  shows help information for other sommands man man gives info of itself 
+pwd -> print working directory displays full path to your current directory 
+ls -hal ->  You can also see a long-format listing including modification dates and hidden files
+cp -> command to copy file 
+mkdir -> to make new sub directory 
+mv -> to move or rename a file 
+rm -> to remove/ delete  a file *CAREFUL
+
+//to compile a c++ program 
+g++ [file_name.cpp]
+
+//to run a cpp file
+[file_name.exe] 
+
+//to compile a java file/multiple files
+javac *.java
+
+//to run java file 
+java [filename]
+
+//to download a python package/module
+pip install [module name]
+
+//to run python code
+python [file_name.py]
+
+//backend web dev python module
+requests
+Django //used by insta , used for more serious projects 
+Flask  // competitor of django but much easier and fatser to set up than django 
+Twisted  //online game dev i.e. real time games 
+BeutifulSoup //for web scraping to grab html data
+Selenium  //automation on website , for bots and stuff 
+
+//datascience python modules
+numpy // all the complicated math problems , done in c++ so fast af
+pandas //read and working with data 
+matplotlib //data visualization ,chart and ml models 
+nltk //data processing and text processing 
+opencv //image and video data processing , object detection 
+
+//machine learning and ai python modules
+Tensorflow //maintained by google, can to nueral networks and neural lstyle networks and more. best
+Keras //maintained by google, more for beginers basic verison of keras
+PyTorch //worth checkin 
+scikit-learn // lighter weight, used for clustoring algo and more
+
+//making graphical user interface python modules
+Kivy //can be used on all different platforms simple and easy to use
+PyQt5 //best python GUI builder ucan use css styling as well 
+tkinter //similar to PyQt5 but basic version
+/*/python modules best for beginners 
+1. Numpy
+2. pandas
+3. matplotlib
+4. collection
+5. os
+6. iPython
+7. pygame
+
+//to run sql in command line
+mysql -u sunny -p
+/ now enter the password
+sonumonu@900
