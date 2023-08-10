@@ -71,4 +71,3 @@ tkinter //similar to PyQt5 but basic version
 //to run sql in command line
 mysql -u sunny -p
 / now enter the password
-sonumonu@900
