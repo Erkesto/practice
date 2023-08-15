@@ -15,3 +15,6 @@ laptop (landscape: 1620 x 1080) and mobile (portrait: 1080 x 2256)
 
 ## HTML Boilerplate
 ![image](https://github.com/Erkesto/practice/assets/62474995/2d4c3ffa-3493-4aa3-9650-d0698358a3f6)
+
+## Referneces
+[Award-winning Portfolio - Process Breakdown](https://www.youtube.com/watch?v=vSgV7r_hOfM&list=TLPQMTIwODIwMjOwIy4hXMgmEA&index=2)
