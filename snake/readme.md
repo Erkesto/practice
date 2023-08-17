@@ -13,9 +13,11 @@ The game is built using Java and provides a nostalgic gaming experience.
 
 ### How to Play
 1. Clone the repository to your local machine using:
-    "  git clone https://github.com/your-username/snake-game-java.git  "
-2. Open the project in your preferred Java IDE.
-3. Run the snakegamemain.java file to start the game.
-4. Use the arrow keys (up, down, left, right) to control the snake's movement.
-5. Eat the food (designated by a red square) to grow the snake.
-6. Avoid colliding with the boundaries or the snake's own body.
+   ```sh
+      git clone https://github.com/your-username/snake-game-java.git
+   ```  
+3. Open the project in your preferred Java IDE.
+4. Run the snakegamemain.java file to start the game.
+5. Use the arrow keys (up, down, left, right) to control the snake's movement.
+6. Eat the food (designated by a red square) to grow the snake.
+7. Avoid colliding with the boundaries or the snake's own body.
