@@ -1,3 +1,5 @@
+# Use this file with rarechar.txt file in the folder...
+
 # method one
 import collections
 import pprint
