@@ -17,7 +17,7 @@ follow link to read the original document -> https://github.com/ryanmcdermott/co
 
 ## Introduction
 
-Code reviews can inspire dread in both reviewer and reviewee. Having your
+Code reviews can inspire dread in both reviewer and the reviewee. Having your
 code analyzed can feel invasive and uncomfortable. Even worse, reviewing other 
 people's code can feel like a painful and ambiguous exercise, searching 
 for problems and not even knowing where to begin.
@@ -25,7 +25,7 @@ for problems and not even knowing where to begin.
 This project aims to provide some solid tips for how to review the code that
 you and your team write. All examples are written in JavaScript, but the advice
 should be applicable to any project of any language. This is by no means an
-exhaustive list, but hopefully this will help you catch as many bugs as
+exhaustive list, but hopefully, this will help you catch as many bugs as
 possible long before users ever see your feature.
 
 ## Why Review Code?
@@ -36,7 +36,7 @@ write. That's ok though! Even the best basketball players in the world miss
 shots.
 
 Having others review our work ensures that we deliver the best product to users
-and with the least amount of errors. Make sure your team implements a code
+with the least amount of errors. Make sure your team implements a code
 review process for new code that is introduced into your codebase. Find a
 process that works for you and your team. There's no one size fits all. The
 important point is to do code reviews as regularly as possible.
@@ -47,7 +47,7 @@ important point is to do code reviews as regularly as possible.
 
 Avoid discussing details that can be handled by a static analysis tool. Don't
 argue about nuances such as code formatting and whether to use `let` or `var`.
-Having a formatter and linter can save your team a lot of time from reviews
+Having a formatted and linter can save your team a lot of time from reviews
 that your computer can do for you.
 
 ### Code reviews should avoid API discussion
@@ -67,7 +67,7 @@ and keep your teammates comfortable and secure in their work!
 ### Typos should be corrected
 
 Avoid nitpicking as much as you can and save it for your linter, compiler, and
-formatter. When you can't, such as in the case of typos, leave a kind comment
+formatted. When you can't, such as in the case of typos, leave a kind comment
 suggesting a fix. It's the little things that make a big difference sometimes!
 
 ### Variable and function names should be clear
@@ -170,8 +170,8 @@ function leftPad(str, len, ch) {
 
 ```javascript
 // Global variable is referenced by the following function.
-// If we had another function that used this name, now it'd be an array and it
-// could break it. Instead it's better to pass in a name parameter
+// If we had another function that used this name, now it'd be an array, and it
+// could break it. Instead, it's better to pass in a name parameter
 let name = 'Ryan McDermott';
 
 function splitIntoFirstAndLastName() {
@@ -224,7 +224,7 @@ class InventoryList {
            </tr>
         </thead>
         <tbody>
-          // We should show something for the null case here if there's // nothing
+          // We should show something for the null case here if there's //Nothing
           in the data inventory
           {Object.keys(this.data.inventory).map(itemId => (
             <tr key={i}>
@@ -269,7 +269,7 @@ class MoneyDislay {
 ### User input should be limited
 
 Users can potentially input an unlimited amount of data to send to you. It's
-important to set limits if a function takes any kind of user data in.
+important to set limits if a function takes any kind of user data.
 
 ```javascript
 router.route('/message').post((req, res) => {
@@ -382,7 +382,7 @@ function isUserMentionedInComments(mentions, user) {
 ### Important actions should be logged
 
 Logging helps give metrics about performance and insight into user behavior.
-Not every action needs to be logged, but decide with your team what makes sense
+Not every action needs to be logged but decide with your team what makes sense
 to keep track of for data analytics. And be sure that no personally identifiable
 information is exposed!
 
@@ -393,7 +393,7 @@ router.route('/request-ride').post((req, res) => {
 
   requestRide(user, currentLocation, destination).then(result => {
     // We should log before and after this block to get a metric for how long
-    // this task took, and potentially even what locations were involved in ride
+    // this task took, and potentially even what locations were involved in the ride
     // ...
   });
 });
@@ -446,7 +446,7 @@ let date1 = dateAddDays(dateTime, 5);
 assert(date1 === '1/6/2017');
 
 // What happens if we add negative days?
-// What happens if we add fractional days: 1.2, 8.7, etc.
+// What happens if we add fractional days: 1.2, 8.7, etc?
 // What happens if we add 1 billion days?
 ```
 
@@ -459,15 +459,15 @@ assert(date1 === '1/6/2017');
 ### TODO comments should be tracked
 
 TODO comments are great for letting you and your fellow engineers know that something
-needs to be fixed later. Sometimes you gotta ship code and wait to fix it
-later. But eventually you'll have to clean it up! That's why you should track it
+needs to be fixed later. Sometimes you gotta ship the code and wait to fix it
+later. But eventually, you'll have to clean it up! That's why you should track it
 and give a corresponding ID from your issue tracking system so you can schedule
 it and keep track of where the problem is in your codebase.
 
 ### Commit messages should be clear and accurately describe new code
 
 We've all written commit messages like "Changed some crap", "damn it",
-"ugg one more to fix this stupid bug". These are funny and satisfying, but not
+and "ugg one more to fix this stupid bug". These are funny and satisfying, but not
 helpful when you're up on a Saturday morning because you pushed code on a Friday
 night and can't figure out what the bad code was doing when you `git blame` the
 commit. Write commit messages that describe the code accurately, and include
@@ -555,10 +555,10 @@ interact with each other, are appropriate measures
 in place to prevent/limit/report harassment or abuse?
 - [ ] Does this change lead to an exclusion of a certain
 group of people or users?
-- [ ] Does this code change introduce unjust impact on people, 
+- [ ] Does this code change introduce an unjust impact on people, 
 particularly those related to sensitive characteristics such as
 race, ethnicity, gender, nationality, income, sexual orientation, ability, 
-and political or religious belief?
+and political or religious beliefs?
 - [ ] Does this code change introduce any algorithm, 
 AI  or machine learning bias?
 
@@ -568,7 +568,7 @@ AI  or machine learning bias?
 - [ ] Has the code change
 - [ ] Have automated tests been added, or have related ones been updated to cover the change?
 - [ ] Do the existing tests reasonably cover the code change (unit/integration/system tests)? 
-- [ ] Are there some test cases, input or edge cases
+- [ ] Are there some test cases, input, or edge cases
 that should be tested in addition?
 
 ## Readability
@@ -577,7 +577,7 @@ that should be tested in addition?
 - [ ] Can the readability of the code be improved by
 smaller methods?
 - [ ] Can the readability of the code be improved by
-different function, method or variable names?
+different functions, methods, or variable names?
 - [ ] Is the code located in the right
 file/folder/package?
 - [ ] Do you think certain methods should be
