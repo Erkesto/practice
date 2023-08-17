@@ -30,6 +30,9 @@ numbered list->
 1. Item 1
 1. Item 2
 
+bullet list->
+- [ ] Item 1 
+- [ ] Item 2
 
 #### Use the Wiki tab to document your project on Git Hub...
 sample documentation:
