@@ -10,7 +10,7 @@ Two ways of achieving this in CSS->
    * Animations: provides keyframes to provide more control over animation on a frame-by-frame basis.
 you can also mix both of these to add more depth to your animations and increase user interactions.
 
-reference-> https://www.youtube.com/watch?v=SgmNxE9lWcY
+referenced from-> https://www.youtube.com/watch?v=SgmNxE9lWcY
 
 ## Responsive Website using HTML and CSS
 
