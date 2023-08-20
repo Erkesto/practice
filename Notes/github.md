@@ -36,7 +36,7 @@ bullet list->
 
 #### Use the Wiki tab to document your project on Git Hub...
 sample documentation:
- * title
+ * Title
  * goal
  * problem statement
  * final approach
@@ -44,3 +44,6 @@ sample documentation:
  * code reference (explains all the functions' working)
  * Example results
   *************************
+
+  ## Comments
+[//]: # (This may be the most platform-independent comment)>
