@@ -7,7 +7,7 @@ This has everything I have learned about the CPUs till now, such as parallel and
 this is a thorough guide to learning how to review someone's code, it includes things to keep in mind and how to get started.
 
 ## 3. ethical_hacking.md: 
-Includes information from the videos and courses on ethical hacking that I think were important
+Includes information from the videos and courses on ethical hacking that I think were important.
 
 ## 4. github.txt: 
 this is a compilation of everything I have learned about GitHub.
