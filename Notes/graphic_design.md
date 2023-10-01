@@ -7,10 +7,10 @@ referenced from: https://www.youtube.com/watch?v=-5jSCHZIHlg
 Statement: when multiple objects are shown the one thing that differs from the rest is most likely to be remembered.
 
 ways to do it-> 
-1. size
-1. shape
-1. color
-1. layout 
+1. Size
+1. Shape
+1. Color
+1. Layout 
 
 Add a call to action button instead of plain old simple buttons, as it helps to direct attention, 
 create interest, and steer decisions in a certain direction. eg:
