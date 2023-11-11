@@ -13,3 +13,4 @@ ipconfig
 ![image](https://github.com/Erkesto/practice/assets/62474995/594b8ac0-a680-454c-8331-cfa26cba9194)
 - [ ] Most of your devices are gonna have  an IP address starting with 192.168.0.0 (with 192.168 staying the same)
 
+References:
