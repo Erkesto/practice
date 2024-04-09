@@ -1,0 +1,37 @@
+@startuml vm
+actor Customer
+actor VendingMachine
+actor Sensors
+actor InventoryDatabase
+actor Vendor
+
+Customer -> VendingMachine: Approaches Vending Machine
+Customer -> VendingMachine: Taps Card on Payment Terminal
+activate VendingMachine
+VendingMachine -> Sensors: Is Card Recognized?
+activate Sensors
+Sensors -> VendingMachine: Card Recognized
+VendingMachine -> Customer: Unlock Door
+Customer -> VendingMachine: Selects Items
+VendingMachine -> Sensors: Sensors Detect Item Removal
+activate Sensors
+Sensors -> InventoryDatabase: Update Inventory Database
+activate InventoryDatabase
+InventoryDatabase --> Sensors: Inventory Updated
+Sensors -> VendingMachine: Is Inventory Low?
+VendingMachine -> Vendor: Alert Vendor for Restocking
+activate Vendor
+Vendor -> Vendor: Receive Alert
+Vendor -> Vendor: Check Inventory Report
+Vendor -> Vendor: Restock Items
+Vendor -> InventoryDatabase: Update Product Database
+Vendor -> InventoryDatabase: Add New Products
+Vendor -> InventoryDatabase: Change Product Pricing
+VendingMachine --> Customer: Transaction Complete
+VendingMachine -> Customer: Close Door
+Customer -> VendingMachine: Card Charged for Items Taken
+deactivate Sensors
+deactivate InventoryDatabase
+deactivate Vendor
+deactivate VendingMachine
+@enduml
