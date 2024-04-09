@@ -1,0 +1,26 @@
+@startuml vm
+actor Customer
+actor Vendor
+rectangle VendingMachine {
+    Customer -- (Approaches Vending Machine)
+    (Approaches Vending Machine) --> (Customer Taps Card on Payment Terminal)
+    (Customer Taps Card on Payment Terminal) --> (Is Card Recognized?)
+    (Is Card Recognized?) --> (Unlock Door) : Yes
+    (Is Card Recognized?) --> (Display "Invalid Card" Message) : No
+    (Unlock Door) --> (Customer Selects Items)
+    (Customer Selects Items) --> (Sensors Detect Item Removal)
+    (Sensors Detect Item Removal) --> (Update Inventory Database)
+    (Update Inventory Database) --> (Is Inventory Low?)
+    (Is Inventory Low?) --> (Alert Vendor for Restocking) : Yes
+    (Is Inventory Low?) --> (Transaction Complete) : No
+    (Alert Vendor for Restocking) --> (Vendor Receives Alert)
+    (Vendor Receives Alert) --> (Vendor Checks Inventory Report)
+    (Vendor Checks Inventory Report) --> (Vendor Restocks Items)
+    (Vendor Restocks Items) --> (Vendor Updates Product Database)
+    (Vendor Updates Product Database) --> (Vendor Adds New Products)
+    (Vendor Updates Product Database) --> (Vendor Changes/updates Product Pricing)
+    (Transaction Complete) --> (Card Charged for Items Taken)
+}
+Customer --> VendingMachine
+Vendor --> VendingMachine
+@enduml

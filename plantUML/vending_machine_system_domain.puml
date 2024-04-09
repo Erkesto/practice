@@ -1,0 +1,17 @@
+@startuml vm
+package VendingMachineSystem {
+    class Customer
+    class VendingMachine
+    class Sensors
+    class InventoryDatabase
+    class Vendor
+}
+
+Customer -- VendingMachine : Initiates transaction
+Customer -- VendingMachine : Selects items
+VendingMachine -- Sensors : Detects item removal
+Sensors -- InventoryDatabase : Update inventory
+VendingMachine -- Vendor : Alert for restocking
+Vendor -- InventoryDatabase : Check inventory report
+Vendor -- VendingMachine : Restock items
+@enduml

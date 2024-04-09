@@ -1,0 +1,29 @@
+@startuml vm
+actor Customer
+participant "Vending Machine" as VM
+participant Sensors
+participant "Inventory Database" as DB
+participant Vendor
+
+Customer -> VM : Approaches Vending Machine
+activate VM
+VM -> Sensors : Taps Card on Payment Terminal
+activate Sensors
+Sensors -> VM : Is Card Recognized?
+VM -> Sensors : Unlock Door
+Sensors -> DB : Update Inventory Database
+activate DB
+DB --> Sensors : Inventory Updated
+Sensors -> VM : Is Inventory Low?
+VM -> Vendor : Alert Vendor for Restocking
+activate Vendor
+Vendor -> DB : Check Inventory Report
+DB --> Vendor : Inventory Report
+Vendor --> VM : Restock Items
+VM --> Customer : Transaction Complete
+Sensors -> VM : Close Door
+deactivate Sensors
+deactivate DB
+deactivate Vendor
+deactivate VM
+@enduml
