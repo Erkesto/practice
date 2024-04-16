@@ -1,17 +1,16 @@
-@startuml vm
-package VendingMachineSystem {
+@startuml domain
+package "Vending Machine System" {
     class Customer
-    class VendingMachine
-    class Sensors
-    class InventoryDatabase
     class Vendor
+    class VendingMachine
+    class InventoryDatabase
+    class PaymentGateway
+    class Item
 }
 
-Customer -- VendingMachine : Initiates transaction
-Customer -- VendingMachine : Selects items
-VendingMachine -- Sensors : Detects item removal
-Sensors -- InventoryDatabase : Update inventory
-VendingMachine -- Vendor : Alert for restocking
-Vendor -- InventoryDatabase : Check inventory report
-Vendor -- VendingMachine : Restock items
+Customer -- VendingMachine : Uses
+Vendor -- VendingMachine : Uses
+VendingMachine --> InventoryDatabase : Uses
+VendingMachine --> PaymentGateway : Uses
+InventoryDatabase --> Item : Contains
 @enduml

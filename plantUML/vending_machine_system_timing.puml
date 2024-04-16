@@ -1,0 +1,42 @@
+@startuml
+
+title Vending Machine System Timing Diagram
+
+
+participant Customer
+participant "Vending Machine" as VM
+participant "Payment Gateway" as PG
+participant "Inventory Database" as DB
+
+=== Customer Interaction ==
+Customer -> VM: Approach
+activate VM
+Customer -> VM: Tap Card/QR code
+VM -> PG: Is Card/QR Recognized?
+activate PG
+PG --> VM: Card/QR Validated
+VM -> VM: Unlock Door
+VM -> VM: Display "Welcome"
+VM -> VM: Display "Validating card/QR"
+VM -> VM: Display "Door opened... Choose your items"
+loop Select Items
+    Customer -> VM: Selects Item
+    VM -> VM: Display "You picked up A item, updates in cart"
+    alt Item Placed Back Incorrectly
+        VM -> VM: Display "Error! : Please place the item back in its place to continue"
+    end
+end
+VM -> VM: Display "You sure you wanna continue to payment?"
+Customer -> VM: Close Door
+VM -> VM: Check Inventory
+alt Inventory Low
+    VM -> PG: Charge Card/Wallet
+    PG --> VM: Card/Wallet Charged for Items Taken
+    VM -> VM: Display "Transaction Complete"
+    PG --> Customer: Transaction Complete
+    Customer -> VM: Take Items
+else Inventory Sufficient
+    VM -> DB: Update Product Database
+end
+
+@enduml

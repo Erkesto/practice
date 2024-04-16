@@ -1,0 +1,18 @@
+@startuml deployment
+
+node "Customer Device" as CustomerDevice
+node "Vending Machine" as VendingMachine {
+    component "Vending Machine Software" as VendingMachineSoftware
+}
+node "Payment Gateway Server" as PaymentGatewayServer {
+    component "Payment Gateway Software" as PaymentGatewaySoftware
+}
+node "Inventory Database Server" as InventoryDatabaseServer {
+    component "Inventory Database Software" as InventoryDatabaseSoftware
+}
+
+CustomerDevice --> VendingMachineSoftware : HTTP
+VendingMachineSoftware --> PaymentGatewaySoftware : HTTP
+VendingMachineSoftware --> InventoryDatabaseSoftware : JDBC
+
+@enduml

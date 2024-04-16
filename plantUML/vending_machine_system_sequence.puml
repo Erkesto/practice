@@ -1,37 +1,49 @@
-@startuml vm
+@startuml sequence
 actor Customer
-actor VendingMachine
-actor Sensors
-actor InventoryDatabase
 actor Vendor
+actor "Vending Machine" as VM
+actor "Inventory Database" as DB
+actor "Payment Gateway" as PG
 
-Customer -> VendingMachine: Approaches Vending Machine
-Customer -> VendingMachine: Taps Card on Payment Terminal
-activate VendingMachine
-VendingMachine -> Sensors: Is Card Recognized?
-activate Sensors
-Sensors -> VendingMachine: Card Recognized
-VendingMachine -> Customer: Unlock Door
-Customer -> VendingMachine: Selects Items
-VendingMachine -> Sensors: Sensors Detect Item Removal
-activate Sensors
-Sensors -> InventoryDatabase: Update Inventory Database
-activate InventoryDatabase
-InventoryDatabase --> Sensors: Inventory Updated
-Sensors -> VendingMachine: Is Inventory Low?
-VendingMachine -> Vendor: Alert Vendor for Restocking
-activate Vendor
-Vendor -> Vendor: Receive Alert
-Vendor -> Vendor: Check Inventory Report
-Vendor -> Vendor: Restock Items
-Vendor -> InventoryDatabase: Update Product Database
-Vendor -> InventoryDatabase: Add New Products
-Vendor -> InventoryDatabase: Change Product Pricing
-VendingMachine --> Customer: Transaction Complete
-VendingMachine -> Customer: Close Door
-Customer -> VendingMachine: Card Charged for Items Taken
-deactivate Sensors
-deactivate InventoryDatabase
-deactivate Vendor
-deactivate VendingMachine
+Customer -> VM: Approach
+Customer -> VM: Tap Card/QR code
+activate VM
+VM -> PG: Is Card/QR Recognized?
+activate PG
+alt Card Recognized
+    PG --> VM: Card/QR Validated
+    VM -> VM: Unlock Door
+    VM -> VM: Display "Welcome"
+    VM -> VM: Display "Validating card/QR"
+    alt Valid Card/QR
+        VM -> VM: Display "Door opened... Choose your items"
+        Customer -> VM: Select Items
+        loop Select Items
+            Customer -> VM: Selects Item
+            VM -> VM: Display "You picked up A item, updates in cart"
+            alt Item Placed Back Incorrectly
+                VM -> VM: Display "Error! : Please place the item back in its place to continue"
+            end
+        end
+        
+        VM -> VM: Display "You sure you wanna continue to payment?"
+        Customer -> VM: Close Door
+        VM -> VM: Check Inventory
+        alt Inventory Not Low
+            VM -> PG: Charge Card/Wallet
+            PG --> VM: Card/Wallet Charged for Items Taken
+            VM -> VM: Display "Transaction Complete"
+            PG --> Customer: Transaction Complete
+        else Inventory Low
+            VM -> Vendor: Alert for Restocking
+            Vendor -> Vendor: Check Inventory Report
+            Vendor -> Vendor: Restock Items
+            Vendor -> DB: Update Product Database
+        end
+    else Invalid Card
+        VM -> VM: Display "Not found, door not open... Try again or with a different card/QR"
+    end
+else Card/QR Not Recognized
+    VM -> VM: Display "Invalid Card/QR"
+end
 @enduml

@@ -1,0 +1,55 @@
+@startuml state_diagram
+[*] --> WaitingForApproach
+WaitingForApproach --> Approached: CustomerApproaches
+Approached --> TappedCardQR: CardQRCodeTapped
+
+
+state TappedCardQR {
+    
+}
+
+Approached --> CardQRValidated: CardQRRecognized
+CardQRValidated --> InvalidCardQR: InvalidQRDetected
+CardQRValidated --> DoorUnlocked: CardQRValidated
+
+state Transaction {
+    [*] --> SelectingItems: DoorOpened
+    SelectingItems --> ClosingDoor: ItemsSelected
+    ClosingDoor --> CheckingInventory: DoorClosed
+    CheckingInventory --> LowInventory: InventoryLow
+    CheckingInventory --> SufficientInventory: InventorySufficient
+}
+
+state Restocking {
+    [*] --> AlertedVendor: LowInventoryAlerted
+    AlertedVendor --> CheckingInventoryReport: VendorNotified
+    CheckingInventoryReport --> RestockedItems: InventoryReportChecked
+}
+
+state InvalidCardQR {
+    [*] --> TappedCardQR: Retry
+}
+
+state LowInventory {
+    [*] --> Restocking: RestockingNeeded
+}
+
+state SufficientInventory {
+    [*] --> Transaction: ContinueTransaction
+}
+
+state InvalidCardQR {
+}
+
+state Approached {
+    
+}
+
+state CardQRValidated {
+    
+}
+
+state DoorUnlocked {
+    [*] --> SelectingItems: DoorOpened
+}
+@enduml

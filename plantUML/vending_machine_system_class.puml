@@ -1,0 +1,43 @@
+@startuml class_diagram
+class Customer {
+    -id: int
+    -name: string
+}
+
+class Vendor {
+    -id: int
+    -name: string
+}
+
+class VendingMachine {
+    -id: int
+    -location: string
+    -inventory: List<Item>
+    -paymentGateway: PaymentGateway
+    -inventoryDatabase: InventoryDatabase
+}
+
+class InventoryDatabase {
+    -items: List<Item>
+    +updateInventory(item: Item): void
+}
+
+class PaymentGateway {
+    -id: int
+    -name: string
+    +processPayment(amount: float): bool
+}
+
+class Item {
+    -id: int
+    -name: string
+    -price: float
+}
+
+Customer --> VendingMachine
+Vendor --> VendingMachine
+VendingMachine --> InventoryDatabase
+VendingMachine --> PaymentGateway
+InventoryDatabase --> Item
+VendingMachine --> Item
+@enduml
