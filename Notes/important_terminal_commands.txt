@@ -71,3 +71,9 @@ tkinter //similar to PyQt5 but basic version
 //to run sql in command line
 mysql -u sunny -p
 / now enter the password
+
+
+// wsl (windows subsystem for linux)
+  watch -n 0.5 nvidia-smi (to check the gpu use while running a model)
+  wsl --list 
+  wsl -d Ubuntu (duplicate running instance)
