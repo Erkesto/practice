@@ -77,3 +77,6 @@ mysql -u sunny -p
   watch -n 0.5 nvidia-smi (to check the gpu use while running a model)
   wsl --list 
   wsl -d Ubuntu (duplicate running instance)
+
+// linux terminal to add a custom command 
+  nano ~/.bashrc [ctrl+X, y, enter(to exit)]
